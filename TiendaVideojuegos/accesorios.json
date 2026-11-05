@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "nombre": "Control inalámbrico DualSense",
+    "precio": 349900,
+    "stock": 15,
+    "tipo": "Control",
+    "compatibilidad": "PlayStation 5"
+  },
+  {
+    "id": 2,
+    "nombre": "Control inalámbrico Xbox",
+    "precio": 279900,
+    "stock": 12,
+    "tipo": "Control",
+    "compatibilidad": "Xbox Series X|S"
+  },
+  {
+    "id": 3,
+    "nombre": "Joy-Con (par)",
+    "precio": 369900,
+    "stock": 10,
+    "tipo": "Control",
+    "compatibilidad": "Nintendo Switch"
+  },
+  {
+    "id": 4,
+    "nombre": "Audífonos inalámbricos Pulse 3D",
+    "precio": 449900,
+    "stock": 7,
+    "tipo": "Audífonos",
+    "compatibilidad": "PlayStation 5"
+  },
+  {
+    "id": 5,
+    "nombre": "Base de carga para controles",
+    "precio": 129900,
+    "stock": 9,
+    "tipo": "Cargador",
+    "compatibilidad": "PlayStation 5"
+  },
+  {
+    "id": 6,
+    "nombre": "Tarjeta microSD 256GB",
+    "precio": 119900,
+    "stock": 20,
+    "tipo": "Memoria",
+    "compatibilidad": "Nintendo Switch"
+  },
+  {
+    "id": 7,
+    "nombre": "Protector de pantalla y estuche",
+    "precio": 79900,
+    "stock": 18,
+    "tipo": "Protector",
+    "compatibilidad": "Nintendo Switch"
+  },
+  {
+    "id": 8,
+    "nombre": "Teclado mecánico gamer RGB",
+    "precio": 219900,
+    "stock": 6,
+    "tipo": "Teclado",
+    "compatibilidad": "PC"
+  }
+]

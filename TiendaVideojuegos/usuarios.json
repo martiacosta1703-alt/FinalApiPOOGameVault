@@ -1,0 +1,83 @@
+
+[
+  {
+    "id": 1,
+    "username": "admin_lucia",
+    "nombre": "Luciana Acosta",
+    "correo": "admin@tienda.com",
+    "rol": "Administrador",
+    "keyAcceso": "KEY-ADMIN-123"
+  },
+  {
+    "id": 2,
+    "username": "vendedor_carlos",
+    "nombre": "Carlos Gómez",
+    "correo": "carlos.vendedor@tienda.com",
+    "rol": "Vendedor",
+    "keyAcceso": "KEY-VEND-456"
+  },
+  {
+    "id": 3,
+    "username": "cliente_juan",
+    "nombre": "Juan Pérez",
+    "correo": "juan.perez@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-001"
+  },
+  {
+    "id": 4,
+    "username": "cliente_maria",
+    "nombre": "María Rodríguez",
+    "correo": "maria.rod@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-002"
+  },
+  {
+    "id": 5,
+    "username": "cliente_mateo",
+    "nombre": "Mateo Londoño",
+    "correo": "mateo.lon@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-003"
+  },
+  {
+    "id": 6,
+    "username": "cliente_valeria",
+    "nombre": "Valeria Henao",
+    "correo": "valeria.henao@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-004"
+  },
+  {
+    "id": 7,
+    "username": "cliente_andres",
+    "nombre": "Andrés Restrepo",
+    "correo": "andres.res@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-005"
+  },
+  {
+    "id": 8,
+    "username": "cliente_sofia",
+    "nombre": "Sofía Betancur",
+    "correo": "sofia.bet@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-006"
+  },
+  {
+    "id": 9,
+    "username": "cliente_david",
+    "nombre": "David Zuluaga",
+    "correo": "david.zul@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-007"
+  },
+  {
+    "id": 10,
+    "username": "cliente_camila",
+    "nombre": "Camila Arango",
+    "correo": "camila.ara@correo.com",
+    "rol": "Cliente",
+    "keyAcceso": "KEY-CLI-008"
+  }
+]

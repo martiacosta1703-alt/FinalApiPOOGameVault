@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "PlayStation 5 Slim",
+    "precio": 2799900,
+    "stock": 5,
+    "marca": "Sony",
+    "almacenamiento": "1TB SSD"
+  },
+  {
+    "id": 2,
+    "nombre": "PlayStation 5 Digital",
+    "precio": 2399900,
+    "stock": 4,
+    "marca": "Sony",
+    "almacenamiento": "1TB SSD"
+  },
+  {
+    "id": 3,
+    "nombre": "Xbox Series X",
+    "precio": 2899900,
+    "stock": 4,
+    "marca": "Microsoft",
+    "almacenamiento": "1TB SSD"
+  },
+  {
+    "id": 4,
+    "nombre": "Xbox Series S",
+    "precio": 1599900,
+    "stock": 6,
+    "marca": "Microsoft",
+    "almacenamiento": "512GB SSD"
+  },
+  {
+    "id": 5,
+    "nombre": "Nintendo Switch OLED",
+    "precio": 1699900,
+    "stock": 9,
+    "marca": "Nintendo",
+    "almacenamiento": "64GB"
+  },
+  {
+    "id": 6,
+    "nombre": "Nintendo Switch Lite",
+    "precio": 999900,
+    "stock": 8,
+    "marca": "Nintendo",
+    "almacenamiento": "32GB"
+  }
+]

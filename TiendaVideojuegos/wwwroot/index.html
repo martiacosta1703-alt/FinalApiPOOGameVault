@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Vault · Tienda de videojuegos y consolas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- ===== Barra superior ===== -->
+    <header class="barra">
+        <div class="barra__contenido">
+            <a href="#" class="logo" data-vista="catalogo">
+                <span class="logo__icono">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <rect x="3" y="7" width="26" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/>
+                        <circle cx="16" cy="17" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+                        <path d="M16 12v-2M16 24v-2M11 17H9M23 17h-2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                        <path d="M7 7V5h18v2" fill="none" stroke="currentColor" stroke-width="2.4"/>
+                    </svg>
+                </span>
+                <span class="logo__texto">GAME<b>VAULT</b></span>
+            </a>
+
+            <nav class="menu">
+                <button class="menu__item activo" data-vista="catalogo">Catálogo</button>
+                <button class="menu__item solo-compra" data-vista="carrito">
+                    Carrito <span class="contador" id="contadorCarrito">0</span>
+                </button>
+                <button class="menu__item solo-gestion" data-vista="gestion">Gestión</button>
+            </nav>
+
+            <div class="sesion" id="zonaSesion">
+                <button class="boton boton--borde" id="btnAbrirLogin">Ingresar</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== Vista: Catálogo (F2) ===== -->
+        <section class="vista activa" id="vista-catalogo">
+            <div class="portada">
+                <div class="portada__texto">
+                    <p class="etiqueta">El baúl de los juegos</p>
+                    <h1>Tu próxima partida<br>está guardada aquí.</h1>
+                    <p class="portada__sub">Videojuegos, consolas y accesorios para PlayStation, Xbox, Nintendo Switch y PC, con stock en tiempo real.</p>
+                </div>
+                <div class="portada__stats" id="estadisticas"></div>
+            </div>
+
+            <div class="filtros">
+                <div class="buscador">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <input type="search" id="txtBuscar" placeholder="Buscar por nombre, género, marca o plataforma…">
+                </div>
+                <div class="chips" id="chipsCategoria"></div>
+                <select id="selOrden" class="selector">
+                    <option value="id">Orden: destacados</option>
+                    <option value="precio-asc">Precio: menor a mayor</option>
+                    <option value="precio-desc">Precio: mayor a menor</option>
+                    <option value="nombre">Nombre A–Z</option>
+                </select>
+            </div>
+
+            <div class="grilla" id="grillaProductos"></div>
+            <p class="vacio oculto" id="sinResultados">No encontramos productos con esos filtros.</p>
+        </section>
+
+        <!-- ===== Vista: Carrito y compra (F4, F5, F6, F7) ===== -->
+        <section class="vista" id="vista-carrito">
+            <h2 class="titulo-vista">Tu carrito</h2>
+            <div class="carrito">
+                <div class="carrito__lista" id="listaCarrito"></div>
+
+                <aside class="resumen">
+                    <h3>Resumen</h3>
+                    <div class="resumen__fila"><span>Productos</span><span id="resCantidad">0</span></div>
+                    <div class="resumen__fila resumen__total"><span>Total</span><span id="resTotal">$0</span></div>
+
+                    <p class="resumen__subtitulo">Método de pago</p>
+                    <div class="metodos" id="metodosPago">
+                        <label class="metodo"><input type="radio" name="pago" value="Tarjeta de Crédito" checked><span>💳 Tarjeta de crédito</span></label>
+                        <label class="metodo"><input type="radio" name="pago" value="Tarjeta Débito"><span>🏦 Tarjeta débito</span></label>
+                        <label class="metodo"><input type="radio" name="pago" value="PSE"><span>🔁 PSE</span></label>
+                        <label class="metodo"><input type="radio" name="pago" value="Nequi"><span>📱 Nequi</span></label>
+                    </div>
+
+                    <button class="boton boton--principal boton--ancho" id="btnComprar">Comprar</button>
+                    <button class="boton boton--texto boton--ancho" id="btnVaciar">Vaciar carrito</button>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ===== Vista: Gestión (F1, F3) ===== -->
+        <section class="vista" id="vista-gestion">
+            <h2 class="titulo-vista">Panel de gestión</h2>
+            <div class="pestanas">
+                <button class="pestana activa" data-pestana="productos">Productos</button>
+                <button class="pestana" data-pestana="usuarios">Usuarios</button>
+            </div>
+
+            <div class="panel activo" id="panel-productos">
+                <div class="panel__cabecera">
+                    <p>Registra, edita o elimina videojuegos, consolas y accesorios.</p>
+                    <button class="boton boton--principal" id="btnNuevoProducto">+ Nuevo producto</button>
+                </div>
+                <div class="tabla-contenedor">
+                    <table class="tabla">
+                        <thead><tr><th>Id</th><th>Categoría</th><th>Nombre</th><th>Detalle</th><th>Precio</th><th>Stock</th><th></th></tr></thead>
+                        <tbody id="tablaProductos"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel" id="panel-usuarios">
+                <div class="panel__cabecera">
+                    <p>Usuarios registrados en el sistema.</p>
+                    <button class="boton boton--principal" id="btnNuevoUsuario">+ Nuevo usuario</button>
+                </div>
+                <div class="tabla-contenedor">
+                    <table class="tabla">
+                        <thead><tr><th>Id</th><th>Nombre</th><th>Usuario</th><th>Correo</th><th>Rol</th><th></th></tr></thead>
+                        <tbody id="tablaUsuarios"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Game Vault · Proyecto de Programación Orientada a Objetos · Universidad Católica de Oriente</p>
+    </footer>
+
+    <!-- ===== Modal: Ingresar con key ===== -->
+    <dialog class="modal" id="modalLogin">
+        <form method="dialog" class="modal__caja" id="formLogin">
+            <h3>Ingresar a Game Vault</h3>
+            <p class="modal__ayuda">Usa tu key de acceso. Ejemplos: <code>KEY-CLI-001</code>, <code>KEY-VEND-456</code>, <code>KEY-ADMIN-123</code></p>
+            <label>Key de acceso<input type="text" id="txtKey" required autocomplete="off"></label>
+            <p class="error oculto" id="errorLogin"></p>
+            <div class="modal__acciones">
+                <button type="button" class="boton boton--texto" data-cerrar>Cancelar</button>
+                <button type="submit" class="boton boton--principal">Ingresar</button>
+            </div>
+            <p class="modal__pie">¿No tienes cuenta? <a href="#" id="lnkRegistro">Regístrate como cliente</a></p>
+        </form>
+    </dialog>
+
+    <!-- ===== Modal: Producto (crear / editar) ===== -->
+    <dialog class="modal" id="modalProducto">
+        <form method="dialog" class="modal__caja" id="formProducto">
+            <h3 id="tituloProducto">Nuevo producto</h3>
+            <input type="hidden" id="prodId">
+            <label>Categoría
+                <select id="prodCategoria">
+                    <option value="Videojuego">Videojuego</option>
+                    <option value="Consola">Consola</option>
+                    <option value="Accesorio">Accesorio</option>
+                </select>
+            </label>
+            <label>Nombre<input type="text" id="prodNombre" required></label>
+            <div class="dos-columnas">
+                <label>Precio (COP)<input type="number" id="prodPrecio" min="0" step="100" required></label>
+                <label>Stock<input type="number" id="prodStock" min="0" required></label>
+            </div>
+            <div class="dos-columnas">
+                <label><span id="lblCampoA">Género</span><input type="text" id="prodCampoA" list="listaCampoA" required></label>
+                <label><span id="lblCampoB">Plataforma</span><input type="text" id="prodCampoB" list="listaCampoB" required></label>
+            </div>
+            <datalist id="listaCampoA"></datalist>
+            <datalist id="listaCampoB"></datalist>
+            <div class="modal__acciones">
+                <button type="button" class="boton boton--texto" data-cerrar>Cancelar</button>
+                <button type="submit" class="boton boton--principal">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- ===== Modal: Usuario (crear / editar) ===== -->
+    <dialog class="modal" id="modalUsuario">
+        <form method="dialog" class="modal__caja" id="formUsuario">
+            <h3 id="tituloUsuario">Nuevo usuario</h3>
+            <input type="hidden" id="usuId">
+            <label>Nombre completo<input type="text" id="usuNombre" required></label>
+            <div class="dos-columnas">
+                <label>Usuario<input type="text" id="usuUsername" required></label>
+                <label>Rol
+                    <select id="usuRol">
+                        <option>Cliente</option>
+                        <option>Vendedor</option>
+                        <option>Administrador</option>
+                    </select>
+                </label>
+            </div>
+            <label>Correo<input type="email" id="usuCorreo" required></label>
+            <label>Key de acceso<input type="text" id="usuKey" required></label>
+            <div class="modal__acciones">
+                <button type="button" class="boton boton--texto" data-cerrar>Cancelar</button>
+                <button type="submit" class="boton boton--principal">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- ===== Modal: Factura / resumen ===== -->
+    <dialog class="modal" id="modalFactura">
+        <div class="modal__caja factura" id="contenidoFactura"></div>
+    </dialog>
+
+    <div class="aviso" id="aviso"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

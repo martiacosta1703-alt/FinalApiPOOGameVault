@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre": "God of War Ragnarok",
+    "precio": 250000,
+    "stock": 10,
+    "genero": "Acción/Aventura",
+    "plataforma": "PlayStation 5"
+  },
+  {
+    "id": 2,
+    "nombre": "Halo Infinite",
+    "precio": 180000,
+    "stock": 8,
+    "genero": "Disparos",
+    "plataforma": "Xbox Series X"
+  },
+  {
+    "id": 3,
+    "nombre": "The Legend of Zelda: Tears of the Kingdom",
+    "precio": 270000,
+    "stock": 12,
+    "genero": "Aventura",
+    "plataforma": "Nintendo Switch"
+  },
+  {
+    "id": 4,
+    "nombre": "Spider-Man 2",
+    "precio": 260000,
+    "stock": 6,
+    "genero": "Acción",
+    "plataforma": "PlayStation 5"
+  },
+  {
+    "id": 5,
+    "nombre": "Cyberpunk 2077: Ultimate Edition",
+    "precio": 200000,
+    "stock": 5,
+    "genero": "RPG",
+    "plataforma": "PC"
+  },
+  {
+    "id": 6,
+    "nombre": "Elden Ring",
+    "precio": 220000,
+    "stock": 7,
+    "genero": "Rol y Acción",
+    "plataforma": "PlayStation 5"
+  },
+  {
+    "id": 7,
+    "nombre": "Mario Kart 8 Deluxe",
+    "precio": 240000,
+    "stock": 15,
+    "genero": "Carreras",
+    "plataforma": "Nintendo Switch"
+  },
+  {
+    "id": 8,
+    "nombre": "Forza Horizon 5",
+    "precio": 190000,
+    "stock": 9,
+    "genero": "Carreras",
+    "plataforma": "Xbox Series X"
+  },
+  {
+    "id": 9,
+    "nombre": "Resident Evil 4 Remake",
+    "precio": 210000,
+    "stock": 11,
+    "genero": "Survival Horror",
+    "plataforma": "PlayStation 5"
+  },
+  {
+    "id": 10,
+    "nombre": "Hogwarts Legacy",
+    "precio": 230000,
+    "stock": 14,
+    "genero": "RPG",
+    "plataforma": "PC"
+  }
+]
